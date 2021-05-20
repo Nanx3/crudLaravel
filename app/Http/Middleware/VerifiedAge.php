@@ -16,7 +16,7 @@ class VerifiedAge
      */
     public function handle(Request $request, Closure $next)
     {
-        echo '<h3>' . date("m.d.y") . '</h3>';
+        // echo '<h3>' . date("m.d.y") . '</h3>';
         //$_REQUEST['age']
        /* if ($request->age >= 18) {
           return $next($request);    

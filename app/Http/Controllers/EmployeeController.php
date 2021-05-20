@@ -25,7 +25,7 @@ class EmployeeController extends Controller
     }
     
     public function edit(Employee $employee) {
-        return view('edit', compact('employees'));
+        return view('edit', compact('employee'));
     }
     
     public function update(Request $request, Employee $employee) {

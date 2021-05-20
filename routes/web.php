@@ -30,4 +30,4 @@ Route::get('/employees/{employee}/edit', [EmployeeController::class, 'edit'])->n
 
 Route::put('/employees/{employee}', [EmployeeController::class, 'update'])->name('employees.update');
 
-Route::delete('/employees/{employee}', [EmployeeController::class, 'delete'])->name('employees.destroy');
+Route::delete('/employees/{employee}', [EmployeeController::class, 'destroy'])->name('employees.destroy');

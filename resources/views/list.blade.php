@@ -29,7 +29,7 @@
       <td>{{ $employee->phone_number }}</td>
       <td>
           <a href="{{ route('employees.edit', $employee->id) }}" class="btn btn-warning">Modify</a>
-          <form method="POST" action="{{ route('employees.delete', $employee->id)}}">
+          <form method="POST" action="{{ route('employees.destroy', $employee->id)}}">
             @csrf
             @method('DELETE')
             <button type="submit" href="" class="btn btn-danger">Delete</button>
