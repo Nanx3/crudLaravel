@@ -2,7 +2,7 @@
 @section('title', 'Edit employee')
 @section('content')
 
-<form method="POST" action="{{ route('employee.update', $employee->id) }}" >
+<form method="POST" action="{{ route('employees.update', $employee->id) }}" >
    @csrf
    @method('PUT')
   <div class="form-group">

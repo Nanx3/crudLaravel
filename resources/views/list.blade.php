@@ -4,7 +4,7 @@
 
 <div class="row">
     <div class="col-md-3 m-4">
-        <a class="btn btn-success" href="{{ route('employee.create') }}">Add new employee</a>
+        <a class="btn btn-success" href="{{ route('employees.create') }}">Add new employee</a>
     </div>
 </div>
 
@@ -28,8 +28,8 @@
       <td>{{ $employee->email }}</td>
       <td>{{ $employee->phone_number }}</td>
       <td>
-          <a href="{{ route('employee.edit', $employee->id) }}" class="btn btn-warning">Modify</a>
-          <form method="POST" action="{{ route('employee.delete', $employee->id)}}">
+          <a href="{{ route('employees.edit', $employee->id) }}" class="btn btn-warning">Modify</a>
+          <form method="POST" action="{{ route('employees.delete', $employee->id)}}">
             @csrf
             @method('DELETE')
             <button type="submit" href="" class="btn btn-danger">Delete</button>

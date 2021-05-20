@@ -11,9 +11,7 @@ use App\Http\Requests\EmployeeStoreRequest;
 class EmployeeController extends Controller
 {
     public function index() {
-        // Select * from employees;
-        $employees = Employee::all(); // Eloquent
-       // dd($employees);
+        $employees = Employee::all();
         return view('list', compact('employees'));
     }
     
@@ -22,16 +20,12 @@ class EmployeeController extends Controller
     }
     
     public function store(EmployeeStoreRequest $request) {
-               
         $employee = Employee::create($request->all());
-        
-        
-        return redirect()->route('employee.index');
+        return redirect()->route('employees.index');
     }
     
     public function edit(Employee $employee) {
-        // $employee = Employee::find($id);
-        return view('edit', compact('employee'));
+        return view('edit', compact('employees'));
     }
     
     public function update(Request $request, Employee $employee) {
@@ -45,11 +39,11 @@ class EmployeeController extends Controller
                 
         $employee->update($request->all());
 
-        return redirect()->route('employee.index');
+        return redirect()->route('employees.index');
     } 
     
-    public function delete(Employee $employee) {
+    public function destroy(Employee $employee) {
         $employee->delete();
-        return redirect()->route('employee.index');
+        return redirect()->route('employees.index');
     }
 }

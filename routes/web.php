@@ -19,20 +19,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// List
-Route::get('/employees', [EmployeeController::class, 'index'])->name('employee.index');
 
-// Creation
-Route::get('/employees/create', [EmployeeController::class, 'create'])->name('employee.create');
+Route::get('/employees', [EmployeeController::class, 'index'])->name('employees.index');
 
-Route::post('/employees', [EmployeeController::class, 'store'])->name('employee.store');
+Route::get('/employees/create', [EmployeeController::class, 'create'])->name('employees.create');
 
-// SHOW / UPDATE
-// employees?id=1
-// employees/1/edit
-Route::get('/employees/{employee}/edit', [EmployeeController::class, 'edit'])->name('employee.edit');
+Route::post('/employees', [EmployeeController::class, 'store'])->name('employees.store');
 
-Route::put('/employees/{employee}', [EmployeeController::class, 'update'])->name('employee.update');
+Route::get('/employees/{employee}/edit', [EmployeeController::class, 'edit'])->name('employees.edit');
 
-// DELETE
-Route::delete('/employees/{employee}', [EmployeeController::class, 'delete'])->name('employee.delete');
+Route::put('/employees/{employee}', [EmployeeController::class, 'update'])->name('employees.update');
+
+Route::delete('/employees/{employee}', [EmployeeController::class, 'delete'])->name('employees.destroy');
